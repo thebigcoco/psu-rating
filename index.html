@@ -1,0 +1,187 @@
+<!doctype html>
+<!-- 研究結論版面版本：RC-CARD-02；可退回版本：RC-CARD-01 -->
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="report-version" content="RC-CARD-02">
+<title>PSU Rating 跨論壇認證偏好研究｜2026-08-06</title>
+<style>
+:root{--ink:#17202a;--muted:#5d6875;--line:#dce3ea;--blue:#1769aa;--bg:#f5f7fa;--card:#fff;--green:#e8f5e9;--amber:#fff8e1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}main{max-width:1500px;margin:32px auto;padding:0 20px}header,.card{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 2px 8px #16283d0b}header{padding:26px 28px;margin-bottom:18px}h1{margin:0 0 6px;font-size:28px}h2{font-size:20px;margin:0 0 12px}h3{font-size:16px;margin:18px 0 8px}.meta,.note{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.card{padding:18px}.metric{font-size:25px;font-weight:700;color:var(--blue)}.metric-label{color:var(--muted)}.section{margin:18px 0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px}table{border-collapse:collapse;width:100%;min-width:1050px;background:white}th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{background:#eef3f8;white-space:nowrap}tr:last-child td{border-bottom:0}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.tag{display:inline-block;border-radius:999px;padding:2px 9px;font-size:12px;background:#edf2f7;margin:2px}.positive{background:var(--green)}.caution{background:var(--amber)}.small{font-size:13px;color:var(--muted)}ul{margin-top:6px}.footer{margin-top:22px;color:var(--muted);font-size:13px}
+@media(max-width:800px){main{margin:12px auto;padding:0 10px}header{padding:20px}.grid{grid-template-columns:1fr}h1{font-size:23px}}
+</style>
+<style>
+#research-conclusion{border-top:4px solid var(--blue)}
+#research-conclusion h2{margin-bottom:16px}
+#research-conclusion h3{margin:18px 0 6px;padding:7px 10px;border-left:4px solid var(--blue);background:#f1f6fb;border-radius:5px}
+#research-conclusion p{margin:8px 10px 12px}
+#research-conclusion p:first-of-type{font-size:16px;font-weight:600;background:#f7fafc;border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+#research-conclusion .caution{padding:10px 13px;border-left:4px solid #d59b22;background:#fff8e7;border-radius:5px}
+.new{background:#fff0a8;color:#795b00;font-weight:700;border:1px solid #e1c45b}
+.conclusion-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.conclusion-card{padding:17px 18px;border:1px solid var(--line);border-radius:12px;background:#fbfdff;position:relative;overflow:hidden}
+.conclusion-card h3{margin:0 0 8px;padding:0;border:0;background:none}
+.conclusion-card p{margin:0!important;font-size:14px!important;font-weight:400!important;background:none!important;border:0!important;padding:0!important}
+.conclusion-card.lead{grid-column:1/-1;background:#eef6ff;border-color:#b9d5ee}
+.conclusion-card.lead:before{content:'研究摘要';display:block;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.08em;margin-bottom:5px}
+.conclusion-card.rating{grid-column:span 2;padding-top:21px}
+.conclusion-card.rating:before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:#8aa8c2}
+.conclusion-card.rating.cybenetics{background:#f2fbf6;border-color:#b8dfc6}.conclusion-card.rating.cybenetics:before{background:#39a866}
+.conclusion-card.rating.eighty{background:#f8fbfd}.conclusion-card.rating.pplp{background:#fffaf0;border-color:#ead59c}.conclusion-card.rating.pplp:before{background:#d59b22}
+.conclusion-card.rating h3{font-size:18px}.conclusion-card.rating .signal{display:inline-block;margin-bottom:9px;padding:3px 9px;border-radius:99px;background:#e7eef5;color:#536b7d;font-size:12px;font-weight:700}.conclusion-card.rating.cybenetics .signal{background:#dff3e5;color:#237342}.conclusion-card.rating.pplp .signal{background:#fff0c6;color:#795b00}
+.conclusion-card.bottom{grid-column:span 3}.conclusion-card.boundary{background:#fff8e7;border-color:#ead59c}
+@media(max-width:950px){.conclusion-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.conclusion-card.rating{grid-column:span 1}.conclusion-card.bottom{grid-column:span 1}.conclusion-card.lead{grid-column:1/-1}}
+@media(max-width:600px){.conclusion-cards{grid-template-columns:1fr}.conclusion-card.rating,.conclusion-card.bottom,.conclusion-card.lead{grid-column:auto}}
+</style>
+<style>
+/* RC-CARD-02：較緊湊的研究結論版面 */
+#research-conclusion{padding:16px}
+#research-conclusion h2{margin-bottom:11px}
+.conclusion-cards{gap:10px}
+.conclusion-card{padding:12px 14px;border-radius:9px}
+.conclusion-card.lead{padding:12px 14px}
+.conclusion-card.lead:before{margin-bottom:3px}
+.conclusion-card.rating{padding-top:16px}
+.conclusion-card.rating:before{height:4px}
+.conclusion-card.rating h3{font-size:18px;margin-bottom:6px}
+.conclusion-card.rating .signal{margin-bottom:6px;padding:3px 8px;font-size:12px}
+.conclusion-card p{font-size:14px!important;line-height:1.55}
+.conclusion-card.lead p{font-size:15px!important}
+.conclusion-card.bottom h3{font-size:17px;margin-bottom:5px}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>PSU Rating 跨論壇認證偏好研究</h1>
+<div class="meta">報告日期：2026-08-06　｜　產生時間：2026-08-06 10:40（台灣時間，UTC+8）　｜　版號：RC-CARD-02　｜　資料範圍：2025-01-01 起　｜　來源：Reddit、Tom's Hardware Forum、TechPowerUp Forum</div>
+<p>研究目的：評估 80 Plus、Cybenetics、PPLP 在硬體論壇中是否出現可觀察的偏好訊號，並區分規格說明、信任評價與購買依據。</p>
+</header>
+
+<section class="grid">
+<div class="card"><div class="metric">43</div><div class="metric-label">合計查證樣本</div><p class="small">Reddit 25、Tom's Hardware Forum 11、TechPowerUp Forum 7。</p></div>
+<div class="card"><div class="metric">3</div><div class="metric-label">三個來源都出現 Cybenetics 參考</div><p class="small">常被用來比較效率、噪音、測試資料或挑選產品。</p></div>
+<div class="card"><div class="metric">0</div><div class="metric-label">只因單一認證而購買</div><p class="small">認證通常只是多項條件之一，不能直接算成偏好。</p></div>
+</section>
+
+<section class="card section" id="research-conclusion">
+<h2>研究結論</h2>
+<div class="conclusion-cards">
+<div class="conclusion-card lead"><h3>一句話摘要</h3><p>43 筆跨論壇資料顯示，Cybenetics 比較常被使用者拿來查資料、比較產品或協助排除選項；但這仍不等於整體消費者已形成統計上的顯著偏好。</p></div>
+<div class="conclusion-card rating eighty"><h3>80 Plus</h3><span class="signal">規格曝光高／偏好證據弱</span><p>主要出現在產品規格與效率門檻。沒有顯示使用者會只因 80 Plus 而購買，且有留言質疑高階標章的行銷性。</p></div>
+<div class="conclusion-card rating cybenetics"><h3>Cybenetics</h3><span class="signal">參考訊號最明顯</span><p>三個論壇都出現用於效率、噪音、測試資料、產品推薦或排除選項的案例，是目前最明顯的信任與購買參考訊號。</p></div>
+<div class="conclusion-card rating pplp"><h3>PPLP</h3><span class="signal">曝光較少／尚無購買偏好</span><p>主要出現在產品規格與認證可信度討論；目前沒有看到明確的購買偏好。</p></div>
+<div class="conclusion-card bottom"><h3>購買行為</h3><p>較強案例包括 R14、T06、P02，但都同時考量價格、效率、噪音或其他條件，不能解讀成只因認證而購買。</p></div>
+<div class="conclusion-card bottom boundary"><h3>研究界線</h3><p>本報告是跨論壇觀察性研究，樣本不是隨機抽樣，因此結果不代表各論壇或整體消費者比例。</p></div>
+</div>
+</section>
+
+<section class="card section">
+<h2>我們怎麼判斷貼文內容</h2>
+<p>我們不會因為貼文提到某個認證，就直接當成使用者喜歡它。只有明確說「這個認證比較可靠、很有用」，才算信任；只有認證真的影響推薦或挑選產品，才算購買依據。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>內容層級</th><th>容易理解的判定方式</th><th>例子</th></tr></thead>
+<tbody>
+<tr><td>0：規格說明</td><td>只列出產品上的認證標示，沒有評價。</td><td><code>850W, 80 Plus Gold</code></td></tr>
+<tr><td>1：解釋／認知</td><td>說明認證代表什麼，但未表示信任。</td><td>「80 Plus mainly measures efficiency」</td></tr>
+<tr><td>2：信任／評價</td><td>明確說某認證較可靠、有用或值得參考。</td><td>「Cybenetics 比 80 Plus 更有參考價值」</td></tr>
+<tr><td>3：購買依據</td><td>認證直接影響選擇、推薦、購買或退換貨。</td><td>「我因為有 Cybenetics 才選這款」</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="card section">
+<h2>認證討論的摘要</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>認證</th><th>主要出現方式</th><th>明確購買訊號</th><th>研究判讀</th></tr></thead>
+<tbody>
+<tr><td>80 Plus</td><td>產品規格、效率門檻、少數負面評價</td><td>0 筆「只因 80 Plus」</td><td>知名度高，但本批沒有直接購買偏好證據。</td></tr>
+<tr><td>Cybenetics</td><td>效率／噪音比較、查測試資料、推薦或排除產品</td><td>多筆，且分布於三個來源</td><td>目前最常被當成實用的信任與購買參考。</td></tr>
+<tr><td>PPLP</td><td>產品規格、認證來源與可信度討論</td><td>0 筆明確購買</td><td>曝光較少，尚未形成可觀察的購買偏好。</td></tr>
+</tbody></table></div>
+<p class="small">以上是本報告 43 筆內容的質性整理，不是市占率或消費者比例。「購買參考」代表認證與其他條件一起影響選擇，不等於單一認證造成購買。</p>
+</section>
+
+<section class="card section">
+<h2>相關原文摘錄（依日期排序）</h2>
+<p>編號中的英文字母代表來源論壇：<strong>R</strong>＝Reddit、<strong>T</strong>＝Tom's Hardware Forum、<strong>P</strong>＝TechPowerUp Forum；後面的數字是該來源在本報告中的流水號。例如 R15 是 Reddit 第 15 筆，T01 是 Tom's Hardware Forum 第 1 筆，P05 是 TechPowerUp Forum 第 5 筆。</p>
+<p class="small"><strong>排序方式：</strong>表格依論壇分組（Reddit → Tom's Hardware Forum → TechPowerUp Forum），各組再依貼文日期由新到舊排列；同一天則依 ID 排列。這是方便查閱的排序，不代表證據強度或偏好高低。</p>
+<p class="small"><strong>New! 說明：</strong>本次以 <a href="reddit_psu_rating_pilot_2026-08-05.html">前一份報告</a> 為比較基準，依 Reddit 貼文 ID、Tom's Hardware 討論串 ID、TechPowerUp 討論串／留言 ID 比對；本次基準報告沒有的資料會標示 <span class="tag new">New!</span>。</p>
+<p>以下摘錄來自 Reddit、Tom's Hardware Forum、TechPowerUp Forum 的貼文或留言。英文原文保留，分類只根據摘錄前後文判定；「購買依據」要求出現選擇、推薦或實際比較行動。</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ID</th><th>論壇</th><th>Subreddit</th><th>來源</th><th>可作為證據的原文摘錄</th><th>認證</th><th>證據類型</th><th>判定</th></tr></thead>
+<tbody>
+<tr><td>R07</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1hfcmo7/">Good replacement PSU?</a></td><td><q>80+ is a measure of efficiency, not quality. Cybenetics measures efficiency, quality, and noise level. Currently I recommend the Cooler Master MWE V3...</q></td><td>80 Plus／Cybenetics</td><td>信任＋購買依據</td><td>明確把 Cybenetics 當成較完整的判斷資訊，並連結到產品推薦。</td></tr>
+<tr><td>R08</td><td>Reddit</td><td>r/hardware</td><td><a href="https://www.reddit.com/r/hardware/comments/1g1bwzc/cybenetics_here_is_everything_you_need_to_know/">Cybenetics: Here is everything you need to know</a></td><td><q>Nice work, I hope more PSU companies will go for this certification.</q></td><td>Cybenetics</td><td>信任評價</td><td>對認證表達正面期待，但沒有購買行動。</td></tr>
+<tr><td>R09</td><td>Reddit</td><td>r/hardware</td><td><a href="https://www.reddit.com/r/hardware/comments/1g1bwzc/cybenetics_here_is_everything_you_need_to_know/">同一討論串</a></td><td><q>There’s budget Cybenetics called PPLP Lab that MSI is funding</q></td><td>PPLP／Cybenetics</td><td>認知／可信度線索</td><td>說明 PPLP 與 Cybenetics 的關係，但不是個人信任或購買選擇。</td></tr>
+<tr><td>R10</td><td>Reddit</td><td>r/hardware</td><td><a href="https://www.reddit.com/r/hardware/comments/1g1bwzc/cybenetics_here_is_everything_you_need_to_know/">同一討論串</a></td><td><q>I expect MSI PSUs miraculously score perfect.</q></td><td>PPLP</td><td>不信任／質疑</td><td>對 MSI 資助 PPLP 後的測試結果表達懷疑；可作為負面信任證據。</td></tr>
+<tr><td>R11</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1higslx/help_me_find_a_psu_for_my_build/">Help me find a PSU for my build!</a></td><td><q>80 Plus Ratings are not very meaningful. Cybenetics Ratings are more meaningful but only consider noise/efficiency.</q></td><td>80 Plus／Cybenetics</td><td>信任評價</td><td>明確比較兩者，對 Cybenetics 評價較高，但仍認為它不是完整品質評估。</td></tr>
+<tr><td>R12</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/13c9uui/how_to_choose_a_psu/">How to Choose a PSU</a></td><td><q>For a better picture of efficiency as well as an idea of how loud or quiet a unit is, I'd recommend the Cybenetics PSU database.</q></td><td>Cybenetics</td><td>購買參考</td><td>明確建議使用 Cybenetics 資料庫輔助挑選，但仍搭配價格、保固與 Tier List。</td></tr>
+<tr><td>R13</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1r9exwe/good-psu-under-100/">Good PSU under $100</a></td><td><q>I'm thinking of something at least 80+ Bronze and a good Cybenetics rating.</q></td><td>80 Plus／Cybenetics</td><td>購買條件</td><td>發文者直接把兩種認證列為換購 PSU 的篩選條件；屬於購買參考，但不是三者間的單一偏好。</td></tr>
+<tr><td>R14</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1dffasg/psu_recommendations/">PSU recommendations</a></td><td><q>I would get the Deepcool PX850G. Judging from the Cybenetics report...</q></td><td>Cybenetics</td><td>明確購買依據</td><td>這是目前最清楚的案例：留言者直接以 Cybenetics 報告作為產品選擇理由。</td></tr>
+<tr><td>T01</td><td>Tom's Hardware Forum</td><td>PSU相關討論</td><td><a href="https://forums.tomshardware.com/threads/what-size-psu-do-i-need.3897621/">What size PSU do I need?</a><div class="small">日期：2026-07-01</div></td><td><q>I'd suggest looking at what you can find that seems reasonable and then seeing if it has been tested by Cybenetics since they specifically test 20-80W efficiency.</q></td><td>Cybenetics</td><td>購買參考</td><td>明確建議用 Cybenetics 測試結果篩選低負載效率。</td></tr>
+<tr><td>T02</td><td>Tom's Hardware Forum</td><td>PSU相關討論</td><td><a href="https://forums.tomshardware.com/threads/questions-about-atx-psus.3893928/">Questions about ATX PSUs?</a><div class="small">日期：2026-03-12</div></td><td><q>NZXT C850 SFX, good quality PSU.</q></td><td>Cybenetics（產品頁標示）</td><td>規格／推薦</td><td>認證出現在產品連結與型號描述中，但沒有明確說因認證而選擇。</td></tr>
+<tr><td>T03</td><td>Tom's Hardware Forum</td><td>Build Advice</td><td><a href="https://forums.tomshardware.com/threads/help-building-a-pc-in-2026.3897524/">Help building a PC in 2026?</a><div class="small">日期：2026-06-29</div></td><td><q>80 PLUS® GOLD Certified<br>Cybenetics PLATINUM and LAMBDA A+ Certified</q></td><td>80 Plus／Cybenetics</td><td>規格陳述</td><td>這是產品規格，不足以單獨證明使用者信任任何一種認證。</td></tr>
+<tr><td>T04</td><td>Tom's Hardware Forum</td><td>PSU相關討論</td><td><a href="https://forums.tomshardware.com/threads/how-to-fix-poor-performance.3897319/">How to fix poor performance?</a><div class="small">日期：2026-06-23</div></td><td><q>So for $10 more I could upgrade to the MONTECH CENTURY II ... 80 Plus Gold &amp; Cybenetics Platinum</q></td><td>80 Plus／Cybenetics</td><td>購買考量</td><td>認證被放入升級產品的比較理由，但不是唯一選擇因素。</td></tr>
+<tr><td>T05</td><td>Tom's Hardware Forum</td><td>PSU相關討論</td><td><a href="https://forums.tomshardware.com/threads/will-my-psu-be-compatible-with-this-gpu.3893614/">Will my PSU be compatible with this GPU?</a><div class="small">日期：2026-06-26</div></td><td><q>Look for the Cybenetics ratings logo for a quality unit that has been tested by Cybenetics. The old 80+ ratings can be easily faked...</q></td><td>80 Plus／Cybenetics</td><td>信任評價＋購買參考</td><td>明確提高對 Cybenetics 的信任，並對 80 Plus 提出負面評價。</td></tr>
+<tr><td>T06</td><td>Tom's Hardware Forum</td><td>PSU相關討論</td><td><a href="https://forums.tomshardware.com/threads/using-one-psu-for-two-systems.3897832/">Using one PSU for two systems?</a><div class="small">日期：2026-07-07</div></td><td><q>It was the lowest wattage PSU I could find that still had decent efficiency at around the 30W idle range.</q></td><td>Cybenetics</td><td>購買依據</td><td>依 Cybenetics 圖表比較低負載效率，並連結到降低電費與更換高品質 PSU 的決定。</td></tr>
+<tr><td>T07</td><td>Tom's Hardware Forum</td><td>PSU相關討論</td><td><a href="https://forums.tomshardware.com/threads/kernel-power-41-63.3892740/">Kernel-Power 41 (63)?</a><div class="small">日期：2026-02-07</div></td><td><q>cybenetics report<br>long warranty<br>high efficiency<br>good standing in PSU Tier list</q></td><td>Cybenetics／80 Plus</td><td>購買判斷框架</td><td>把 Cybenetics 報告列為購買判斷條件之一，同時考慮保固、效率、Tier List、品牌與 OEM。</td></tr>
+<tr><td>T08</td><td>Tom's Hardware Forum</td><td>PSU相關討論</td><td><a href="https://forums.tomshardware.com/threads/psu-12vhpwr-connector.3896480/">PSU 12VHPWR connector?</a><div class="small">日期：2026-06-01</div></td><td><q>PSU: Corsair RM850e, Cybenetics GOLD, 850W, ATX 3.1, PCIe 5.1</q></td><td>Cybenetics</td><td>規格陳述</td><td>認證只出現在使用者列出的 PSU 規格，沒有足夠證據表示信任或選購原因。</td></tr>
+<tr><td>R15</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1q6uo9z/simple_questions_january_07_2026/">Simple Questions - January 07, 2026</a><div class="small">日期：2026-01-08</div></td><td><q>Compare effeciency/noise ratings, cybenetics has been a huge help with newer units.</q></td><td>Cybenetics</td><td>信任＋購買參考</td><td>明確表示 Cybenetics 對比較新款 PSU 很有幫助，且列在挑選流程中。</td></tr>
+<tr><td>R16</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1uk3d6r/psu_choice/">PSU choice</a><div class="small">日期：2026-06-30</div></td><td><q>get 1000-1200w atx 3.1 - S tier in HardwareBusters list and cybenetics certified</q></td><td>Cybenetics</td><td>購買條件</td><td>直接把 Cybenetics 認證列入產品篩選條件，同時依賴 Hardware Busters 分級。</td></tr>
+<tr><td>R17</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1tqa63e/ryzen_7_5700x_5060ti_16gb_overclocked_3x_fan_850w/">Ryzen 7 5700X...850W PSU</a><div class="small">日期：2026-05-28</div></td><td><q>Looking at the cybernetics test data, it’s just barely scraping by spec.</q></td><td>Cybenetics</td><td>負面評價／排除依據</td><td>用 Cybenetics 測試資料否定該 PSU；這是明確的購買排除依據。</td></tr>
+<tr><td>R18</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1v1h8rf/help_finding_the_right_parts_for_my_next_pc/">Help finding the right parts for my next PC</a><div class="small">日期：2026-07-20</div></td><td><q>atx 3.1 S tier with cybenetics certified stamp... Do not buy a 850w psu</q></td><td>Cybenetics</td><td>購買條件</td><td>把 Cybenetics 認證與 Tier 分級當成選購條件，並據此排除 850W 選項。</td></tr>
+<tr><td>R19</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1usgopk/which_psu_corsair_rmx_1000w_or_gigabyte/">Which PSU: Corsair RM850x or GIGABYTE AORUS?</a><div class="small">日期：2026-07-10</div></td><td><q>better certifications (Platinum rating in 80 PLUS and Cybenetics)</q></td><td>80 Plus／Cybenetics</td><td>規格＋選擇比較</td><td>認證被列為優點，但原文同時把顏色與可信度列為取捨，不能單獨歸為認證偏好。</td></tr>
+<tr><td>R20</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1s322gc/need_a_new_750w_psu_wait_for_sale/">Need a new 750W PSU, wait for sale?</a><div class="small">日期：2026-03-25</div></td><td><q>Cooler Master MWE V3 is my preference: ... I recommend seeing Cybenetics ratings</q></td><td>Cybenetics</td><td>信任＋購買參考</td><td>發文者推薦產品，並明確建議查看 Cybenetics 評級。</td></tr>
+<tr><td>P01</td><td>TechPowerUp Forum</td><td>News</td><td><a href="https://www.techpowerup.com/forums/threads/deepcool-gamerstorm-at-computex-2026-3200w-titanium-psu-cl600-roomy-tower-with-wood-trim.349669/">DeepCool GamerStorm at Computex 2026</a><div class="small">日期：2026-06-03</div></td><td><q>The PQ Series offers Cybenetics + PPLP Platinum certification</q></td><td>Cybenetics／PPLP</td><td>規格陳述</td><td>產品規格同時列出兩種認證，沒有使用者偏好證據。</td></tr>
+<tr><td>P02</td><td>TechPowerUp Forum</td><td>Power Supplies</td><td><a href="https://www.techpowerup.com/forums/threads/questions-regarding-new-1-2kw-psu-in-various-use-cases.350911/">Questions regarding new 1.2Kw PSU</a><div class="small">日期：2026-07-21</div></td><td><q>It's a very good choice, provided the price was also competitive. It has a high PSU performance score on Cybenetics.</q></td><td>Cybenetics</td><td>信任＋購買依據</td><td>回應直接肯定產品，並把 Cybenetics 分數列為理由之一；同時保留價格條件。</td></tr>
+<tr><td>P03</td><td>TechPowerUp Forum</td><td>Power Supplies</td><td><a href="https://www.techpowerup.com/forums/threads/power-supply-for-my-build.350107/">Power Supply for my build</a><div class="small">日期：2026-06-21</div></td><td><q>The Cybenetics scores are good, but I will not give up the tier list either. It is good to be able to cross reference them.</q></td><td>Cybenetics</td><td>信任但非單一依據</td><td>明確信任 Cybenetics 分數，但不把它當成唯一購買依據。</td></tr>
+<tr><td>P04</td><td>TechPowerUp Forum</td><td>Power Supplies</td><td><a href="https://www.techpowerup.com/forums/threads/corsair-rm650-2019-blasted-some-white-smoke-on-its-rear.350875/">Corsair RM650 blasted some white smoke</a><div class="small">日期：2026-07-19</div></td><td><q>Looking at the Cybenetics report that SX1000P PSU has pretty good results. The only major drawback in my view is the noise profile.</q></td><td>Cybenetics</td><td>比較／購買參考</td><td>使用報告比較 PSU 表現，並把噪音列為取捨因素。</td></tr>
+<tr><td>P05</td><td>TechPowerUp Forum</td><td>News</td><td><a href="https://www.techpowerup.com/forums/threads/gigabyte-brings-flagship-power-to-enthusiast-pc-builds-and-local-ai-with-aorus-p1600w.351343/post-5765487">Gigabyte AORUS P1600W</a><div class="small">日期：2026-08-05</div></td><td><q>the 80 plus titanium rating with the 1600 Watt is for sure a marketing device</q></td><td>80 Plus</td><td>負面評價／不信任</td><td>留言者認為高階 80 Plus 標示可能只是行銷，不等於產品信任。</td></tr>
+<tr><td>R01</td><td>Reddit</td><td>r/hardware</td><td><a href="https://www.reddit.com/r/hardware/comments/1cwfgxv/msi_to_begin_certifying_its_psus_with_pplp_atx_30/">MSI PPLP 討論</a></td><td><q>Never heard of PPLP and all the top hits in a search are in reference to this press release.</q></td><td>PPLP／80 Plus</td><td>信任質疑</td><td>對 PPLP 的知名度與可信度提出疑問；沒有購買行動。</td></tr>
+<tr><td>R02</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1t9mw2f/psu_ratings_question/">PSU Ratings Question?</a></td><td><q>So 80+ just means how efficient a psu is...</q></td><td>80 Plus</td><td>規格／概念說明</td><td>只是在解釋認證意義，沒有表示信任或購買偏好。</td></tr>
+<tr><td>R03</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/13c9uui/how-to-choose-a-psu/">How to Choose a PSU</a></td><td><q>For a better picture of efficiency as well as an idea of how loud or quiet a unit is, I'd recommend the Cybenetics PSU database.</q></td><td>Cybenetics／80 Plus</td><td>信任＋購買參考</td><td>明確建議用 Cybenetics 資料庫輔助挑選，但仍搭配其他條件。</td></tr>
+<tr><td>R04</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1ptht61/need-help-on-psu/">Need help on PSU</a></td><td><q>PSU: ENDORFY Supremo FM6 1000W 80 Plus Gold</q>；留言另提到 Cybenetics Platinum certificate。</td><td>80 Plus／Cybenetics</td><td>規格陳述</td><td>認證出現在產品規格與概念澄清中，沒有明確換購理由。</td></tr>
+<tr><td>R05</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/18szlot/">80+ efficiency certification</a></td><td><q>There is also Cybenetics which do PSU certification ... tend to be a bit better than 80+ certifications.</q></td><td>80 Plus／Cybenetics</td><td>信任評價</td><td>明確把 Cybenetics 評為較有參考價值，但沒有實際購買行動。</td></tr>
+<tr><td>R06</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/u86gs8/">PSU upgrade options</a></td><td><q>Well, don't just go buy 80 PLUS rating.</q>；另建議查看 Cybenetics 報告與獨立測試。</td><td>80 Plus／Cybenetics</td><td>購買建議</td><td>否定單看 80 Plus，將 Cybenetics 與獨立測試列為購買參考。</td></tr>
+<tr><td>R21</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1j8gfy1/place_to_look_for_uptodate_psu_tier_list/">Place to look for up-to-date PSU tier list</a><div class="small">日期：2025-03-11</div></td><td><q>The best source I found is the cybenetics new program.</q></td><td>Cybenetics</td><td>查找／購買依據</td><td>在尋找 2025 年 PSU 資訊時，發文者把 Cybenetics 列為目前找到的最佳資料來源。</td></tr>
+<tr><td>R22</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1o9bf8r/psu_which_guide_do_you_guys_use_spl_or_cybenetics/">PSU - Which Guide do you guys use? SPL or Cybenetics Lab?</a><div class="small">日期：2025-10-17</div></td><td><q>But got high score and good test result in Cybenetics.</q></td><td>Cybenetics</td><td>比較／信任</td><td>直接比較 SPL 與 Cybenetics，並指出同一 PSU 在 Cybenetics 得到高分與良好測試結果。</td></tr>
+<tr><td>R23</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1j4xxwb/can_someone_help_me_with_psu/">Can someone help me with psu</a><div class="small">日期：2025-03-06</div></td><td><q>I recommend something rated highly on Cybenetics. They're a better test than the 80+ certs because they test for a lot more.</q></td><td>80 Plus／Cybenetics</td><td>信任＋購買建議</td><td>留言明確推薦高 Cybenetics 評級產品，並認為測試內容比 80 Plus 更完整。</td></tr>
+<tr><td>R24</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1kgou1d/power_supply_suggestion/">Power supply suggestion</a><div class="small">日期：2025-05-07</div></td><td><q>Corsair is going with cybenetics certification for its psu after ditching 80+.</q></td><td>80 Plus／Cybenetics</td><td>認證轉換／選擇背景</td><td>發文者把 Corsair 改用 Cybenetics、離開 80 Plus 視為選購新 PSU 時的重要差異。</td></tr>
+<tr><td>R25</td><td>Reddit</td><td>r/buildapc</td><td><a href="https://www.reddit.com/r/buildapc/comments/1j1dzad/help_i_cant_choose_a_psu/">Help i cant choose a PSU</a><div class="small">日期：2025-03-02</div></td><td><q>80+ certification is just an efficiency thing.</q></td><td>80 Plus</td><td>概念說明</td><td>將 80 Plus 限定為效率資訊，沒有把它當成整體品質保證。</td></tr>
+<tr><td>T09</td><td>Tom's Hardware Forum</td><td>PSU相關討論</td><td><a href="https://forums.tomshardware.com/threads/tips-on-choosing-a-psu.3878746/">Tips on choosing a PSU?</a><div class="small">日期：2025-05-02</div></td><td><q>I've taken up reading through Cybenetics reviews for silence and efficiency.</q></td><td>Cybenetics</td><td>購買參考</td><td>留言者表示會閱讀 Cybenetics 評測判斷噪音與效率，再交叉比對 Tier List。</td></tr>
+<tr><td>T10</td><td>Tom's Hardware Forum</td><td>Power Supplies</td><td><a href="https://forums.tomshardware.com/threads/psu-for-this-budget-build.3887671/">PSU for this budget build?</a><div class="small">日期：2025-08-27</div></td><td><q>All i knew about psus is cybenetics and efficency.</q></td><td>Cybenetics</td><td>認知／購買討論</td><td>使用者把 Cybenetics 與效率視為主要已知判斷資訊，但沒有單獨表達購買偏好。</td></tr>
+<tr><td>T11</td><td>Tom's Hardware Forum</td><td>Power Supplies</td><td><a href="https://forums.tomshardware.com/threads/which-psu.3891134/">Which PSU?</a><div class="small">日期：2025-12-31</div></td><td><q>Be Quiet! unit, overall, beats Corsair units since the noise testing is done across the full output wattage range.</q></td><td>Cybenetics</td><td>比較／購買依據</td><td>以 Cybenetics 噪音測試範圍比較不同 PSU，並把結果用於產品取捨。</td></tr>
+<tr><td>P06</td><td>TechPowerUp Forum</td><td>News</td><td><a href="https://www.techpowerup.com/forums/threads/msi-unveils-meg-ai1600t-pcie5-mpg-a1250gs-pcie5-and-mpg-a1000gs-pcie5-power-supply-units.333243/">MSI Unveils MEG Ai1600T PCIE5...</a><div class="small">日期：2025-02-27</div></td><td><q>Certified by 80 Plus, Cybenetics, and PPLP</q></td><td>80 Plus／Cybenetics／PPLP</td><td>規格陳述</td><td>產品新聞同時列出三種認證，屬產品規格，不是使用者偏好證據。</td></tr>
+<tr><td>P07</td><td>TechPowerUp Forum</td><td>Power Supplies</td><td><a href="https://www.techpowerup.com/forums/threads/cooler-master-x-silent-edge-platinum-850-w.327730/">Cooler Master X Silent Edge Platinum 850 W</a><div class="small">日期：2025-01-31</div></td><td><q>Or even better, Cybenetics Titanium certified.</q></td><td>Cybenetics／80 Plus</td><td>評價／期待</td><td>留言者把 Cybenetics Titanium 視為比產品現有認證更理想的目標，屬認證評價訊號。</td></tr>
+</tbody></table></div>
+<p class="small">本表目前共 43 筆：Reddit 25 筆、Tom's Hardware Forum 11 筆、TechPowerUp Forum 7 筆；新增範圍擴大至 2025-01-01 起。</p>
+</section>
+
+<section class="card section">
+<h2>TechPowerUp Forum 查閱狀態</h2>
+<p>已透過瀏覽器正常查閱 <a href="https://www.techpowerup.com/forums/">TechPowerUp Forum</a>，並使用論壇內建搜尋查找 2025-01-01 以後的 `Cybenetics`、`80 Plus`、`PPLP`。目前已納入 7 筆與 PSU 認證直接相關的貼文或留言；其中產品新聞與使用者留言已分開判讀。</p>
+<p class="small">跨論壇搜尋同時檢查認證名稱變體（80 Plus／80+、Cybenetics／Cybenetics Lab、PPLP）及 PSU 選購語境（efficiency、noise、tier list、choose、buy）。只有實際讀到的貼文或留言才列入證據表；搜尋結果中的單純產品規格、新聞標題或無法讀取內容，不直接算成使用者偏好。</p>
+</section>
+
+<section class="card section">
+<h2>限制與下一步</h2>
+<ul>
+<li>三個論壇都不是隨機抽樣，且英文硬體社群偏向熟悉技術的使用者；不同論壇的搜尋與索引方式也不完全相同。</li>
+<li>80 Plus 的產品曝光可能遠高於 PPLP，不能直接用提及量比較偏好；TechPowerUp 也混有產品新聞與規格貼文，已與使用者判讀分開。</li>
+<li>後續研究可固定 subreddit、論壇區域、日期範圍與搜尋詞，累積至少 200 篇有效討論。</li>
+<li>樣本擴大後，可進一步計算信任／購買依據比例，並使用卡方檢定及控制品牌、價格、瓦數與 subreddit 的多項 logistic regression。</li>
+</ul>
+</section>
+<div class="footer">資料只列入本次能實際查證的論壇貼文與可讀取留言；無法讀取的內容不推論為沒有討論。</div>
+</main>
+<script>
+const redditPostDates={R01:'2024-05-20',R02:'2026-05-11',R03:'2023-05-09',R04:'2025-12-23',R05:'2023-12-29',R06:'2022-04-21',R07:'2024-12-16',R08:'2024-10-11',R09:'2024-10-11',R10:'2024-10-11',R11:'2024-12-20',R12:'2023-05-09',R13:'2026-02-20',R14:'2024-06-14'};
+document.querySelectorAll('table tbody tr').forEach(row=>{const id=row.cells[0]?.textContent.trim();const source=row.cells[3];if(redditPostDates[id]&&source&&!source.querySelector('.small')){const d=document.createElement('div');d.className='small';d.textContent='日期：'+redditPostDates[id];source.appendChild(d);}});
+const previousEvidenceKeys=new Set(['reddit:1cwfgxv','reddit:1t9mw2f','reddit:13c9uui','reddit:1ptht61','reddit:18szlot','reddit:u86gs8','reddit:1hfcmo7','reddit:1g1bwzc','reddit:1higslx','reddit:1r9exwe','reddit:1dffasg']);
+const evidenceKey=url=>{const r=url.match(/reddit\.com\/r\/[^/]+\/comments\/([^/]+)/);if(r)return'reddit:'+r[1];const t=url.match(/(tomshardware\.com|techpowerup\.com)\/forums\/threads\/([^/]+)/);if(!t)return url;const post=url.match(/\/post-(\d+)/);return t[1]+':'+t[2]+(post?':'+post[1]:'');};
+const evidenceTable=[...document.querySelectorAll('table')].find(t=>t.querySelector('th')?.textContent.trim()==='ID');
+if(evidenceTable){const order={'Reddit':0,"Tom's Hardware Forum":1,'TechPowerUp Forum':2};const body=evidenceTable.querySelector('tbody');[...body.rows].forEach(row=>{const link=row.cells[3]?.querySelector('a');if(link&&!previousEvidenceKeys.has(evidenceKey(link.href))&&!row.cells[0].querySelector('.new')){const tag=document.createElement('span');tag.className='tag new';tag.textContent='New!';row.cells[0].append(' ',tag);}});[...body.rows].sort((a,b)=>{const ao=order[a.cells[1]?.textContent.trim()]??9,bo=order[b.cells[1]?.textContent.trim()]??9;if(ao!==bo)return ao-bo;const ad=a.cells[3]?.querySelector('.small')?.textContent.replace('日期：','')||'';const bd=b.cells[3]?.querySelector('.small')?.textContent.replace('日期：','')||'';return bd.localeCompare(ad)||a.cells[0].textContent.localeCompare(b.cells[0].textContent);}).forEach(row=>body.appendChild(row));}
+</script>
+</body>
+</html>
