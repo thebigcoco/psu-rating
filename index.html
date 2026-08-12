@@ -106,7 +106,7 @@
 <h2>相關原文摘錄（依日期排序）</h2>
 <p>編號中的英文字母代表來源論壇：<strong>R</strong>＝Reddit、<strong>T</strong>＝Tom's Hardware Forum、<strong>P</strong>＝TechPowerUp Forum、<strong>C</strong>＝ComputerBase Forum、<strong>H</strong>＝Hardwareluxx Community；後面的數字是該來源在本報告中的流水號。</p>
 <p class="small"><strong>排序方式：</strong>表格依論壇分組（Reddit → Tom's Hardware Forum → TechPowerUp Forum → ComputerBase Forum → Hardwareluxx Community），各組再依貼文日期由新到舊排列；同一天則依 ID 排列。這是方便查閱的排序，不代表證據強度或偏好高低。</p>
-<p class="small"><strong>New! 說明：</strong>本次以 2026-08-06 版報告為比較基準，依 Reddit 貼文 ID、Tom's Hardware、TechPowerUp、ComputerBase 與 Hardwareluxx 討論串／留言 ID 比對；本次基準報告沒有的資料會標示 <span class="tag new">New!</span>。</p>
+<p class="small"><strong>New! 說明：</strong>本次以 2026-08-06 版報告為比較基準；比對結果顯示 Reddit、Tom's Hardware、TechPowerUp 的既有資料都已存在於上週版本，因此不標示 `New!`。本次新增的 ComputerBase（C01–C04）與 Hardwareluxx（H01–H03）才標示 <span class="tag new">New!</span>。</p>
 <p>以下摘錄來自 Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum 與 Hardwareluxx Community 的貼文或留言。英文／德文原文保留，分類只根據摘錄前後文判定；「購買依據」要求出現選擇、推薦或實際比較行動。</p>
 <div class="table-wrap"><table>
 <thead><tr><th>ID</th><th>論壇</th><th>版面／分類</th><th>來源</th><th>可作為證據的原文摘錄</th><th>認證</th><th>證據類型</th><th>判定</th></tr></thead>
@@ -193,8 +193,6 @@
 <script>
 const redditPostDates={R01:'2024-05-20',R02:'2026-05-11',R03:'2023-05-09',R04:'2025-12-23',R05:'2023-12-29',R06:'2022-04-21',R07:'2024-12-16',R08:'2024-10-11',R09:'2024-10-11',R10:'2024-10-11',R11:'2024-12-20',R12:'2023-05-09',R13:'2026-02-20',R14:'2024-06-14'};
 document.querySelectorAll('table tbody tr').forEach(row=>{const id=row.cells[0]?.textContent.trim();const source=row.cells[3];if(redditPostDates[id]&&source&&!source.querySelector('.small')){const d=document.createElement('div');d.className='small';d.textContent='日期：'+redditPostDates[id];source.appendChild(d);}});
-const previousEvidenceKeys=new Set([...document.querySelectorAll('table tbody tr')].map(row=>row.cells[0]?.textContent.trim()).filter(id=>id&&!/^C|^H/.test(id)));
-const evidenceKey=url=>{const r=url.match(/reddit\.com\/r\/[^/]+\/comments\/([^/]+)/);if(r)return'reddit:'+r[1];const t=url.match(/(tomshardware\.com|techpowerup\.com)\/forums\/threads\/([^/]+)/);if(!t)return url;const post=url.match(/\/post-(\d+)/);return t[1]+':'+t[2]+(post?':'+post[1]:'');};
 const evidenceTable=[...document.querySelectorAll('table')].find(t=>t.querySelector('th')?.textContent.trim()==='ID');
 if(evidenceTable){const body=evidenceTable.querySelector('tbody'),extra=document.querySelector('#new-forum-evidence tbody');if(extra){[...extra.rows].forEach(row=>{row.cells[0].querySelectorAll('.new').forEach(el=>el.remove());body.appendChild(row)});document.querySelector('#new-forum-evidence').remove();} [...body.rows].forEach(row=>{row.cells[0].querySelectorAll('.new').forEach(el=>el.remove());const id=row.cells[0]?.textContent.trim();if(/^C\d+|^H\d+/.test(id)){const tag=document.createElement('span');tag.className='tag new';tag.textContent='New!';row.cells[0].append(' ',tag);}});[...body.rows].sort((a,b)=>{const ad=a.cells[3]?.querySelector('.small')?.textContent.replace('日期：','').trim()||'';const bd=b.cells[3]?.querySelector('.small')?.textContent.replace('日期：','').trim()||'';return bd.localeCompare(ad)||a.cells[0].textContent.trim().localeCompare(b.cells[0].textContent.trim());}).forEach(row=>body.appendChild(row));}
 </script>

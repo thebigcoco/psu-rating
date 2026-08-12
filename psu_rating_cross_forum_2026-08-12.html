@@ -106,7 +106,7 @@
 <h2>相關原文摘錄（依日期排序）</h2>
 <p>編號中的英文字母代表來源論壇：<strong>R</strong>＝Reddit、<strong>T</strong>＝Tom's Hardware Forum、<strong>P</strong>＝TechPowerUp Forum、<strong>C</strong>＝ComputerBase Forum、<strong>H</strong>＝Hardwareluxx Community；後面的數字是該來源在本報告中的流水號。</p>
 <p class="small"><strong>排序方式：</strong>表格依論壇分組（Reddit → Tom's Hardware Forum → TechPowerUp Forum → ComputerBase Forum → Hardwareluxx Community），各組再依貼文日期由新到舊排列；同一天則依 ID 排列。這是方便查閱的排序，不代表證據強度或偏好高低。</p>
-<p class="small"><strong>New! 說明：</strong>本次以 2026-08-06 版報告為比較基準，依 Reddit 貼文 ID、Tom's Hardware、TechPowerUp、ComputerBase 與 Hardwareluxx 討論串／留言 ID 比對；本次基準報告沒有的資料會標示 <span class="tag new">New!</span>。</p>
+<p class="small"><strong>New! 說明：</strong>本次以 2026-08-06 版報告為比較基準；比對結果顯示 Reddit、Tom's Hardware、TechPowerUp 的既有資料都已存在於上週版本，因此不標示 `New!`。本次新增的 ComputerBase（C01–C04）與 Hardwareluxx（H01–H03）才標示 <span class="tag new">New!</span>。</p>
 <p>以下摘錄來自 Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum 與 Hardwareluxx Community 的貼文或留言。英文／德文原文保留，分類只根據摘錄前後文判定；「購買依據」要求出現選擇、推薦或實際比較行動。</p>
 <div class="table-wrap"><table>
 <thead><tr><th>ID</th><th>論壇</th><th>版面／分類</th><th>來源</th><th>可作為證據的原文摘錄</th><th>認證</th><th>證據類型</th><th>判定</th></tr></thead>
@@ -155,7 +155,7 @@
 <tr><td>P06</td><td>TechPowerUp Forum</td><td>News</td><td><a href="https://www.techpowerup.com/forums/threads/msi-unveils-meg-ai1600t-pcie5-mpg-a1250gs-pcie5-and-mpg-a1000gs-pcie5-power-supply-units.333243/">MSI Unveils MEG Ai1600T PCIE5...</a><div class="small">日期：2025-02-27</div></td><td><q>Certified by 80 Plus, Cybenetics, and PPLP</q></td><td>80 Plus／Cybenetics／PPLP</td><td>規格陳述</td><td>產品新聞同時列出三種認證，屬產品規格，不是使用者偏好證據。</td></tr>
 <tr><td>P07</td><td>TechPowerUp Forum</td><td>Power Supplies</td><td><a href="https://www.techpowerup.com/forums/threads/cooler-master-x-silent-edge-platinum-850-w.327730/">Cooler Master X Silent Edge Platinum 850 W</a><div class="small">日期：2025-01-31</div></td><td><q>Or even better, Cybenetics Titanium certified.</q></td><td>Cybenetics／80 Plus</td><td>評價／期待</td><td>留言者把 Cybenetics Titanium 視為比產品現有認證更理想的目標，屬認證評價訊號。</td></tr>
 </tbody></table></div>
-<p class="small">本表目前共 43 筆：Reddit 25 筆、Tom's Hardware Forum 11 筆、TechPowerUp Forum 7 筆；新增範圍擴大至 2025-01-01 起。</p>
+<p class="small">本表目前共 50 筆：Reddit 25 筆、Tom's Hardware Forum 11 筆、TechPowerUp Forum 7 筆、ComputerBase Forum 4 筆、Hardwareluxx Community 3 筆；新增範圍擴大至 2025-01-01 起。</p>
 </section>
 
 <section class="card section">
@@ -167,7 +167,7 @@
 <section class="card section">
 <h2>限制與下一步</h2>
 <ul>
-<li>三個論壇都不是隨機抽樣，且英文硬體社群偏向熟悉技術的使用者；不同論壇的搜尋與索引方式也不完全相同。</li>
+<li>五個論壇都不是隨機抽樣，且硬體社群偏向熟悉技術的使用者；不同論壇的搜尋與索引方式也不完全相同。</li>
 <li>80 Plus 的產品曝光可能遠高於 PPLP，不能直接用提及量比較偏好；TechPowerUp 也混有產品新聞與規格貼文，已與使用者判讀分開。</li>
 <li>後續研究可固定 subreddit、論壇區域、日期範圍與搜尋詞，累積至少 200 篇有效討論。</li>
 <li>樣本擴大後，可進一步計算信任／購買依據比例，並使用卡方檢定及控制品牌、價格、瓦數與 subreddit 的多項 logistic regression。</li>
@@ -193,10 +193,8 @@
 <script>
 const redditPostDates={R01:'2024-05-20',R02:'2026-05-11',R03:'2023-05-09',R04:'2025-12-23',R05:'2023-12-29',R06:'2022-04-21',R07:'2024-12-16',R08:'2024-10-11',R09:'2024-10-11',R10:'2024-10-11',R11:'2024-12-20',R12:'2023-05-09',R13:'2026-02-20',R14:'2024-06-14'};
 document.querySelectorAll('table tbody tr').forEach(row=>{const id=row.cells[0]?.textContent.trim();const source=row.cells[3];if(redditPostDates[id]&&source&&!source.querySelector('.small')){const d=document.createElement('div');d.className='small';d.textContent='日期：'+redditPostDates[id];source.appendChild(d);}});
-const previousEvidenceKeys=new Set(['reddit:1cwfgxv','reddit:1t9mw2f','reddit:13c9uui','reddit:1ptht61','reddit:18szlot','reddit:u86gs8','reddit:1hfcmo7','reddit:1g1bwzc','reddit:1higslx','reddit:1r9exwe','reddit:1dffasg']);
-const evidenceKey=url=>{const r=url.match(/reddit\.com\/r\/[^/]+\/comments\/([^/]+)/);if(r)return'reddit:'+r[1];const t=url.match(/(tomshardware\.com|techpowerup\.com)\/forums\/threads\/([^/]+)/);if(!t)return url;const post=url.match(/\/post-(\d+)/);return t[1]+':'+t[2]+(post?':'+post[1]:'');};
 const evidenceTable=[...document.querySelectorAll('table')].find(t=>t.querySelector('th')?.textContent.trim()==='ID');
-if(evidenceTable){const order={'Reddit':0,"Tom's Hardware Forum":1,'TechPowerUp Forum':2};const body=evidenceTable.querySelector('tbody');[...body.rows].forEach(row=>{const link=row.cells[3]?.querySelector('a');if(link&&!previousEvidenceKeys.has(evidenceKey(link.href))&&!row.cells[0].querySelector('.new')){const tag=document.createElement('span');tag.className='tag new';tag.textContent='New!';row.cells[0].append(' ',tag);}});[...body.rows].sort((a,b)=>{const ao=order[a.cells[1]?.textContent.trim()]??9,bo=order[b.cells[1]?.textContent.trim()]??9;if(ao!==bo)return ao-bo;const ad=a.cells[3]?.querySelector('.small')?.textContent.replace('日期：','')||'';const bd=b.cells[3]?.querySelector('.small')?.textContent.replace('日期：','')||'';return bd.localeCompare(ad)||a.cells[0].textContent.localeCompare(b.cells[0].textContent);}).forEach(row=>body.appendChild(row));}
+if(evidenceTable){const body=evidenceTable.querySelector('tbody'),extra=document.querySelector('#new-forum-evidence tbody');if(extra){[...extra.rows].forEach(row=>{row.cells[0].querySelectorAll('.new').forEach(el=>el.remove());body.appendChild(row)});document.querySelector('#new-forum-evidence').remove();} [...body.rows].forEach(row=>{row.cells[0].querySelectorAll('.new').forEach(el=>el.remove());const id=row.cells[0]?.textContent.trim();if(/^C\d+|^H\d+/.test(id)){const tag=document.createElement('span');tag.className='tag new';tag.textContent='New!';row.cells[0].append(' ',tag);}});[...body.rows].sort((a,b)=>{const ad=a.cells[3]?.querySelector('.small')?.textContent.replace('日期：','').trim()||'';const bd=b.cells[3]?.querySelector('.small')?.textContent.replace('日期：','').trim()||'';return bd.localeCompare(ad)||a.cells[0].textContent.trim().localeCompare(b.cells[0].textContent.trim());}).forEach(row=>body.appendChild(row));}
 </script>
 </body>
 </html>
