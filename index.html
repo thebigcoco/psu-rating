@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- 研究結論版面版本：RC-CARD-05；可退回版本：RC-CARD-04 -->
+<!-- 研究結論版面版本：RC-CARD-06；可退回版本：RC-CARD-05 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
@@ -56,7 +56,7 @@ table.new-only tbody tr:not(.is-new){display:none}
 .conclusion-card.bottom h3{font-size:17px;margin-bottom:5px}
 </style>
 <style>
-/* RC-CARD-05：無側邊符號版研究結論 */
+/* RC-CARD-06：移除卡片符號與標籤 */
 #research-conclusion{border-top:1px solid var(--line);padding:18px}
 #research-conclusion h2{margin-bottom:12px}
 .conclusion-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
@@ -66,8 +66,8 @@ table.new-only tbody tr:not(.is-new){display:none}
 .conclusion-card h3,.conclusion-card.rating h3,.conclusion-card.bottom h3{margin:0 0 5px;padding:0;border:0;background:none;font-size:17px}
 .conclusion-card p,.conclusion-card.lead p{font-size:14px!important;line-height:1.55}
 .conclusion-card.rating:before{content:none}
-.conclusion-card.rating.cybenetics,.conclusion-card.rating.eighty,.conclusion-card.rating.pplp{border-left:1px solid var(--line)}
-.conclusion-card.rating .signal{margin:0 0 6px;padding:0;background:none!important;border-radius:0;color:var(--muted)!important;font-size:12px;font-weight:700}
+.conclusion-card.rating.cybenetics,.conclusion-card.rating.eighty,.conclusion-card.rating.pplp{border-left:0}
+.conclusion-card.rating .signal{display:none}
 .conclusion-card.bottom{grid-column:span 1}
 @media(max-width:950px){.conclusion-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.conclusion-card.lead{grid-column:1/-1}}
 @media(max-width:600px){.conclusion-cards{grid-template-columns:1fr}.conclusion-card.lead{grid-column:auto}}
@@ -91,9 +91,9 @@ table.new-only tbody tr:not(.is-new){display:none}
 <h2>研究結論</h2>
 <div class="conclusion-cards">
 <div class="conclusion-card lead"><h3>一句話摘要</h3><p>50 筆、涵蓋五個論壇的資料顯示，Cybenetics 比較常被使用者拿來查資料、比較產品或協助排除選項；但這仍不等於整體消費者已形成統計上的顯著偏好。</p></div>
-<div class="conclusion-card rating eighty"><h3>80 Plus</h3><span class="signal">規格曝光高／偏好證據弱</span><p>主要出現在產品規格與效率門檻。沒有顯示使用者會只因 80 Plus 而購買，且有留言質疑高階標章的行銷性。</p></div>
-<div class="conclusion-card rating cybenetics"><h3>Cybenetics</h3><span class="signal">參考訊號最明顯</span><p>五個論壇都出現用於效率、噪音、測試資料、產品推薦或排除選項的案例，是目前最明顯的信任與購買參考訊號。</p></div>
-<div class="conclusion-card rating pplp"><h3>PPLP</h3><span class="signal">曝光較少／尚無購買偏好</span><p>主要出現在產品規格與認證可信度討論；目前沒有看到明確的購買偏好。</p></div>
+<div class="conclusion-card rating eighty"><h3>80 Plus</h3><p>主要出現在產品規格與效率門檻。沒有顯示使用者會只因 80 Plus 而購買，且有留言質疑高階標章的行銷性。</p></div>
+<div class="conclusion-card rating cybenetics"><h3>Cybenetics</h3><p>五個論壇都出現用於效率、噪音、測試資料、產品推薦或排除選項的案例，是目前最明顯的信任與購買參考訊號。</p></div>
+<div class="conclusion-card rating pplp"><h3>PPLP</h3><p>主要出現在產品規格與認證可信度討論；目前沒有看到明確的購買偏好。</p></div>
 <div class="conclusion-card bottom"><h3>購買行為</h3><p>較強案例包括 R14、T06、P02、C01、H03，但都同時考量價格、效率、噪音或其他條件，不能解讀成只因認證而購買。</p></div>
 <div class="conclusion-card bottom boundary"><h3>研究界線</h3><p>本報告是跨論壇觀察性研究，樣本不是隨機抽樣，因此結果不代表各論壇或整體消費者比例。</p></div>
 </div>
