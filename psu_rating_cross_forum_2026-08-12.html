@@ -73,15 +73,26 @@ table.new-only tbody tr:not(.is-new){display:none}
 .conclusion-card.bottom{grid-column:span 1}
 .translation{display:block;margin-top:4px;color:#4f5f6d;font-size:13px}
 @media(max-width:950px){.conclusion-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.conclusion-card.lead{grid-column:1/-1}}
-@media(max-width:600px){.conclusion-cards{grid-template-columns:1fr}.conclusion-card.lead{grid-column:auto}}
+.report-meta{display:flex;flex-wrap:wrap;gap:5px 16px;margin-top:2px;font-size:13px}
+.report-meta span{position:relative}
+.report-meta span+span:before{content:"";position:absolute;left:-9px;top:.35em;width:1px;height:1em;background:#cad6e1}
+.header-detail{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:flex-start;gap:12px;padding:12px 14px;background:linear-gradient(135deg,#f4f8fc,#f8fbfd);border:1px solid #d9e4ed}
+.source-line{margin-top:14px;border-radius:10px 10px 0 0;border-bottom-color:#e6edf3}
+.purpose-line{border-top:0;border-radius:0 0 10px 10px}
+.detail-label{color:#315b78;font-size:13px;font-weight:800;letter-spacing:.04em;padding-top:3px}
+.purpose-text{margin:0;color:#3b5366;line-height:1.65}
+.source-list{display:flex;flex-wrap:wrap;gap:6px}
+.source-list span{display:inline-flex;align-items:center;min-height:27px;padding:3px 9px;border:1px solid #ccdae5;border-radius:999px;background:#fff;color:#3b5366;font-size:12px;font-weight:650;box-shadow:0 1px 2px #18364f0a}
+@media(max-width:600px){.conclusion-cards{grid-template-columns:1fr}.conclusion-card.lead{grid-column:auto}.report-meta{display:grid;gap:4px}.report-meta span+span:before{display:none}.header-detail{grid-template-columns:1fr;gap:7px}.detail-label{padding-top:0}.source-list{gap:5px}}
 </style>
 </head>
 <body>
 <main>
 <header>
 <h1>PSU Rating 認證偏好研究</h1>
-<div class="meta">報告日期：2026-08-12　｜　產生時間：2026-08-12 16:46（台灣時間，UTC+8）　｜　版號：RC-CARD-03　｜　資料範圍：2025-01-01 起　｜　來源：Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum、Hardwareluxx Community、PC Games Hardware Extreme、Overclockers UK Forums、NGA玩家社區、百度貼吧</div>
-<p>研究目的：評估 80 Plus、Cybenetics、PPLP 在硬體論壇中是否出現可觀察的偏好訊號，並區分規格說明、信任評價與購買依據。</p>
+<div class="meta report-meta"><span>報告日期：2026-08-12</span><span>產生時間：2026-08-12 17:01（台灣時間，UTC+8）</span><span>版號：RC-CARD-03</span><span>資料範圍：2025-01-01 起</span></div>
+<div class="header-detail source-line"><span class="detail-label">搜尋來源</span><div class="source-list"><span>Reddit</span><span>Tom's Hardware Forum</span><span>TechPowerUp Forum</span><span>ComputerBase Forum</span><span>Hardwareluxx Community</span><span>PC Games Hardware Extreme</span><span>Overclockers UK Forums</span><span>NGA玩家社區</span><span>百度貼吧</span></div></div>
+<div class="header-detail purpose-line"><span class="detail-label">研究目的</span><p class="purpose-text">評估 80 Plus、Cybenetics、PPLP 在硬體論壇中是否出現可觀察的偏好訊號，並區分規格說明、信任評價與購買依據。</p></div>
 </header>
 
 <section class="grid">
@@ -261,7 +272,7 @@ if(newToggle&&evidenceTable){const evidenceBody=evidenceTable.querySelector('tbo
 <script>
 (()=>{
   const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
-  let textNode;while(textNode=walker.nextNode()){if(textNode.nodeValue.includes('NGA'))textNode.nodeValue=textNode.nodeValue.replaceAll('NGA','NGA玩家社區');}
+  let textNode;while(textNode=walker.nextNode()){if(textNode.nodeValue.includes('NGA'))textNode.nodeValue=textNode.nodeValue.replace(/NGA(?!玩家社區)/g,'NGA玩家社區');}
   const table=[...document.querySelectorAll('table')].find(t=>t.querySelector('th')?.textContent.trim()==='ID');
   const forumFilter=document.querySelector('#forum-filter');
   const ratingFilter=document.querySelector('#rating-filter');
