@@ -22,6 +22,8 @@
 .evidence-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 10px}
 .evidence-controls button{border:1px solid #9bbbd5;border-radius:7px;padding:7px 12px;background:#eef6ff;color:#145887;font:inherit;font-weight:700;cursor:pointer}
 .evidence-controls button:hover{background:#dfefff}
+.evidence-controls label{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;font-weight:700}
+.evidence-controls select{min-width:150px;border:1px solid #b8c8d6;border-radius:7px;padding:7px 30px 7px 10px;background:#fff;color:var(--ink);font:inherit}
 .evidence-controls .status{color:var(--muted);font-size:13px}
 table.new-only tbody tr:not(.is-new){display:none}
 .conclusion-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
@@ -78,7 +80,7 @@ table.new-only tbody tr:not(.is-new){display:none}
 <main>
 <header>
 <h1>PSU Rating 認證偏好研究</h1>
-<div class="meta">報告日期：2026-08-12　｜　產生時間：2026-08-12 16:24（台灣時間，UTC+8）　｜　版號：RC-CARD-03　｜　資料範圍：2025-01-01 起　｜　來源：Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum、Hardwareluxx Community、PC Games Hardware Extreme、Overclockers UK Forums、NGA、百度貼吧</div>
+<div class="meta">報告日期：2026-08-12　｜　產生時間：2026-08-12 16:39（台灣時間，UTC+8）　｜　版號：RC-CARD-03　｜　資料範圍：2025-01-01 起　｜　來源：Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum、Hardwareluxx Community、PC Games Hardware Extreme、Overclockers UK Forums、NGA、百度貼吧</div>
 <p>研究目的：評估 80 Plus、Cybenetics、PPLP 在硬體論壇中是否出現可觀察的偏好訊號，並區分規格說明、信任評價與購買依據。</p>
 </header>
 
@@ -131,7 +133,7 @@ table.new-only tbody tr:not(.is-new){display:none}
 <p class="small"><strong>排序方式：</strong>表格依論壇分組（Reddit → Tom's Hardware Forum → TechPowerUp Forum → ComputerBase Forum → Hardwareluxx Community → PC Games Hardware Extreme → Overclockers UK Forums → NGA → 百度貼吧），各組再依貼文日期由新到舊排列；同一天則依 ID 排列。這是方便查閱的排序，不代表證據強度或偏好高低。</p>
 <p class="small"><strong>New! 說明：</strong>本次以 2026-08-06 版報告為比較基準；比對結果顯示 Reddit、Tom's Hardware、TechPowerUp 的既有資料都已存在於上週版本，因此不標示 <span class="tag new">New!</span>。本次新增的 ComputerBase（C01–C07）、Hardwareluxx（H01–H06）、PC Games Hardware Extreme（X01–X04）、Overclockers UK（O01–O02）、NGA（N01–N04）與百度貼吧（B01–B03）才標示 <span class="tag new">New!</span>。</p>
 <p>以下摘錄來自 Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum、Hardwareluxx Community、PC Games Hardware Extreme、Overclockers UK Forums、NGA 與百度貼吧的貼文或留言。英文／德文原文保留，並附中文翻譯；中文簡體原文也保留，並附繁體中文翻譯；分類只根據摘錄前後文判定；「購買依據」要求出現選擇、推薦或實際比較行動。</p>
-<div class="evidence-controls"><button type="button" id="toggle-new-evidence" aria-pressed="false">顯示所有 New! 摘要</button><span class="status" id="new-evidence-status">目前顯示全部 69 筆摘錄</span></div>
+<div class="evidence-controls"><label>論壇<select id="forum-filter"><option value="">全部論壇</option></select></label><label>認證<select id="rating-filter"><option value="">全部認證</option><option value="80 Plus">80 Plus</option><option value="Cybenetics">Cybenetics</option><option value="PPLP">PPLP</option></select></label><button type="button" id="toggle-new-evidence" aria-pressed="false">顯示所有 New! 摘要</button><span class="status" id="new-evidence-status">目前顯示全部 69 筆摘錄</span></div>
 <div class="table-wrap"><table>
 <thead><tr><th>ID</th><th>論壇</th><th>版面／分類</th><th>來源</th><th>可作為證據的原文摘錄</th><th>認證</th><th>證據類型</th><th>判定</th></tr></thead>
 <tbody>
@@ -255,6 +257,43 @@ if(newToggle&&evidenceTable){const evidenceBody=evidenceTable.querySelector('tbo
 </script>
 <script>
 (()=>{const table=[...document.querySelectorAll('table')].find(t=>t.querySelector('th')?.textContent.trim()==='ID');if(!table)return;const body=table.querySelector('tbody');[...body.rows].forEach(row=>{const id=row.cells[0]?.textContent.trim();if(/^B\d+/.test(id)){row.classList.add('is-new');if(!row.cells[0].querySelector('.new')){const tag=document.createElement('span');tag.className='tag new';tag.textContent='New!';row.cells[0].append(' ',tag);}}});const old=document.querySelector('#toggle-new-evidence');if(!old)return;const btn=old.cloneNode(true);old.replaceWith(btn);const rows=[...body.rows],newRows=rows.filter(row=>row.cells[0]?.querySelector('.new'));btn.addEventListener('click',()=>{const onlyNew=!table.classList.contains('new-only');table.classList.toggle('new-only',onlyNew);btn.setAttribute('aria-pressed',String(onlyNew));btn.textContent=onlyNew?'顯示全部原文摘錄':'顯示所有 New! 摘要';const status=document.querySelector('#new-evidence-status');if(status)status.textContent=onlyNew?`目前顯示 ${newRows.length} 筆 New! 摘要（C01–C07、H01–H06、X01–X04、O01–O02、N01–N04、B01–B03）`:`目前顯示全部 ${rows.length} 筆摘錄`;});})();
+</script>
+<script>
+(()=>{
+  const table=[...document.querySelectorAll('table')].find(t=>t.querySelector('th')?.textContent.trim()==='ID');
+  const forumFilter=document.querySelector('#forum-filter');
+  const ratingFilter=document.querySelector('#rating-filter');
+  const oldButton=document.querySelector('#toggle-new-evidence');
+  const status=document.querySelector('#new-evidence-status');
+  if(!table||!forumFilter||!ratingFilter||!oldButton)return;
+  const body=table.querySelector('tbody');
+  const rows=[...body.rows];
+  [...new Set(rows.map(row=>row.cells[1]?.textContent.trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'zh-Hant')).forEach(forum=>{
+    const option=document.createElement('option');option.value=forum;option.textContent=forum;forumFilter.appendChild(option);
+  });
+  const button=oldButton.cloneNode(true);oldButton.replaceWith(button);
+  let onlyNew=false;
+  const applyFilters=()=>{
+    const forum=forumFilter.value,rating=ratingFilter.value;
+    let visible=0;
+    rows.forEach(row=>{
+      const forumMatch=!forum||row.cells[1]?.textContent.trim()===forum;
+      const ratingMatch=!rating||row.cells[5]?.textContent.includes(rating);
+      const newMatch=!onlyNew||!!row.cells[0]?.querySelector('.new');
+      const show=forumMatch&&ratingMatch&&newMatch;
+      row.style.display=show?'':'none';if(show)visible++;
+    });
+    const filters=[];if(forum)filters.push(`論壇：${forum}`);if(rating)filters.push(`認證：${rating}`);if(onlyNew)filters.push('New!');
+    if(status)status.textContent=`目前顯示 ${visible}／${rows.length} 筆摘錄${filters.length?'（'+filters.join('、')+'）':''}`;
+  };
+  forumFilter.addEventListener('change',applyFilters);
+  ratingFilter.addEventListener('change',applyFilters);
+  button.addEventListener('click',()=>{
+    onlyNew=!onlyNew;table.classList.remove('new-only');button.setAttribute('aria-pressed',String(onlyNew));
+    button.textContent=onlyNew?'顯示全部原文摘錄':'顯示所有 New! 摘要';applyFilters();
+  });
+  applyFilters();
+})();
 </script>
 </body>
 </html>
