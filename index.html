@@ -80,7 +80,7 @@ table.new-only tbody tr:not(.is-new){display:none}
 <main>
 <header>
 <h1>PSU Rating 認證偏好研究</h1>
-<div class="meta">報告日期：2026-08-12　｜　產生時間：2026-08-12 16:39（台灣時間，UTC+8）　｜　版號：RC-CARD-03　｜　資料範圍：2025-01-01 起　｜　來源：Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum、Hardwareluxx Community、PC Games Hardware Extreme、Overclockers UK Forums、NGA、百度貼吧</div>
+<div class="meta">報告日期：2026-08-12　｜　產生時間：2026-08-12 16:46（台灣時間，UTC+8）　｜　版號：RC-CARD-03　｜　資料範圍：2025-01-01 起　｜　來源：Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum、Hardwareluxx Community、PC Games Hardware Extreme、Overclockers UK Forums、NGA玩家社區、百度貼吧</div>
 <p>研究目的：評估 80 Plus、Cybenetics、PPLP 在硬體論壇中是否出現可觀察的偏好訊號，並區分規格說明、信任評價與購買依據。</p>
 </header>
 
@@ -260,6 +260,8 @@ if(newToggle&&evidenceTable){const evidenceBody=evidenceTable.querySelector('tbo
 </script>
 <script>
 (()=>{
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let textNode;while(textNode=walker.nextNode()){if(textNode.nodeValue.includes('NGA'))textNode.nodeValue=textNode.nodeValue.replaceAll('NGA','NGA玩家社區');}
   const table=[...document.querySelectorAll('table')].find(t=>t.querySelector('th')?.textContent.trim()==='ID');
   const forumFilter=document.querySelector('#forum-filter');
   const ratingFilter=document.querySelector('#rating-filter');
