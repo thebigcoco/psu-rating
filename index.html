@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- 研究結論版面版本：RC-CARD-03；可退回版本：RC-CARD-02 -->
+<!-- 研究結論版面版本：RC-CARD-04；可退回版本：RC-CARD-03 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
@@ -54,6 +54,25 @@ table.new-only tbody tr:not(.is-new){display:none}
 .conclusion-card p{font-size:14px!important;line-height:1.55}
 .conclusion-card.lead p{font-size:15px!important}
 .conclusion-card.bottom h3{font-size:17px;margin-bottom:5px}
+</style>
+<style>
+/* RC-CARD-04：簡化版研究結論 */
+#research-conclusion{border-top:1px solid var(--line);padding:18px}
+#research-conclusion h2{margin-bottom:12px}
+.conclusion-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.conclusion-card,.conclusion-card.lead,.conclusion-card.rating,.conclusion-card.bottom{grid-column:auto;padding:13px 15px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.conclusion-card.lead{grid-column:1/-1;background:#f7fafc}
+.conclusion-card.lead:before{content:none}
+.conclusion-card h3,.conclusion-card.rating h3,.conclusion-card.bottom h3{margin:0 0 5px;padding:0;border:0;background:none;font-size:17px}
+.conclusion-card p,.conclusion-card.lead p{font-size:14px!important;line-height:1.55}
+.conclusion-card.rating:before{content:none}
+.conclusion-card.rating.cybenetics{border-left:4px solid #39a866}
+.conclusion-card.rating.eighty{border-left:4px solid #8aa8c2}
+.conclusion-card.rating.pplp{border-left:4px solid #d59b22}
+.conclusion-card.rating .signal{margin:0 0 6px;padding:0;background:none!important;border-radius:0;color:var(--muted)!important;font-size:12px;font-weight:700}
+.conclusion-card.bottom{grid-column:span 1}
+@media(max-width:950px){.conclusion-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.conclusion-card.lead{grid-column:1/-1}}
+@media(max-width:600px){.conclusion-cards{grid-template-columns:1fr}.conclusion-card.lead{grid-column:auto}}
 </style>
 </head>
 <body>
