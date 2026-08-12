@@ -19,6 +19,11 @@
 #research-conclusion p:first-of-type{font-size:16px;font-weight:600;background:#f7fafc;border:1px solid var(--line);border-radius:8px;padding:13px 15px}
 #research-conclusion .caution{padding:10px 13px;border-left:4px solid #d59b22;background:#fff8e7;border-radius:5px}
 .new{background:#fff0a8;color:#795b00;font-weight:700;border:1px solid #e1c45b}
+.evidence-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 10px}
+.evidence-controls button{border:1px solid #9bbbd5;border-radius:7px;padding:7px 12px;background:#eef6ff;color:#145887;font:inherit;font-weight:700;cursor:pointer}
+.evidence-controls button:hover{background:#dfefff}
+.evidence-controls .status{color:var(--muted);font-size:13px}
+table.new-only tbody tr:not(.is-new){display:none}
 .conclusion-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
 .conclusion-card{padding:17px 18px;border:1px solid var(--line);border-radius:12px;background:#fbfdff;position:relative;overflow:hidden}
 .conclusion-card h3{margin:0 0 8px;padding:0;border:0;background:none}
@@ -108,6 +113,7 @@
 <p class="small"><strong>排序方式：</strong>表格依論壇分組（Reddit → Tom's Hardware Forum → TechPowerUp Forum → ComputerBase Forum → Hardwareluxx Community），各組再依貼文日期由新到舊排列；同一天則依 ID 排列。這是方便查閱的排序，不代表證據強度或偏好高低。</p>
 <p class="small"><strong>New! 說明：</strong>本次以 2026-08-06 版報告為比較基準；比對結果顯示 Reddit、Tom's Hardware、TechPowerUp 的既有資料都已存在於上週版本，因此不標示 `New!`。本次新增的 ComputerBase（C01–C04）與 Hardwareluxx（H01–H03）才標示 <span class="tag new">New!</span>。</p>
 <p>以下摘錄來自 Reddit、Tom's Hardware Forum、TechPowerUp Forum、ComputerBase Forum 與 Hardwareluxx Community 的貼文或留言。英文／德文原文保留，分類只根據摘錄前後文判定；「購買依據」要求出現選擇、推薦或實際比較行動。</p>
+<div class="evidence-controls"><button type="button" id="toggle-new-evidence" aria-pressed="false">顯示所有 New! 摘要</button><span class="status" id="new-evidence-status">目前顯示全部 50 筆摘錄</span></div>
 <div class="table-wrap"><table>
 <thead><tr><th>ID</th><th>論壇</th><th>版面／分類</th><th>來源</th><th>可作為證據的原文摘錄</th><th>認證</th><th>證據類型</th><th>判定</th></tr></thead>
 <tbody>
@@ -195,6 +201,8 @@ const redditPostDates={R01:'2024-05-20',R02:'2026-05-11',R03:'2023-05-09',R04:'2
 document.querySelectorAll('table tbody tr').forEach(row=>{const id=row.cells[0]?.textContent.trim();const source=row.cells[3];if(redditPostDates[id]&&source&&!source.querySelector('.small')){const d=document.createElement('div');d.className='small';d.textContent='日期：'+redditPostDates[id];source.appendChild(d);}});
 const evidenceTable=[...document.querySelectorAll('table')].find(t=>t.querySelector('th')?.textContent.trim()==='ID');
 if(evidenceTable){const body=evidenceTable.querySelector('tbody'),extra=document.querySelector('#new-forum-evidence tbody');if(extra){[...extra.rows].forEach(row=>{row.cells[0].querySelectorAll('.new').forEach(el=>el.remove());body.appendChild(row)});document.querySelector('#new-forum-evidence').remove();} [...body.rows].forEach(row=>{row.cells[0].querySelectorAll('.new').forEach(el=>el.remove());const id=row.cells[0]?.textContent.trim();if(/^C\d+|^H\d+/.test(id)){const tag=document.createElement('span');tag.className='tag new';tag.textContent='New!';row.cells[0].append(' ',tag);}});[...body.rows].sort((a,b)=>{const ad=a.cells[3]?.querySelector('.small')?.textContent.replace('日期：','').trim()||'';const bd=b.cells[3]?.querySelector('.small')?.textContent.replace('日期：','').trim()||'';return bd.localeCompare(ad)||a.cells[0].textContent.trim().localeCompare(b.cells[0].textContent.trim());}).forEach(row=>body.appendChild(row));}
+const newToggle=document.querySelector('#toggle-new-evidence');
+if(newToggle&&evidenceTable){const evidenceBody=evidenceTable.querySelector('tbody'),rows=[...evidenceBody.rows],newRows=rows.filter(row=>row.cells[0]?.querySelector('.new'));newToggle.addEventListener('click',()=>{const onlyNew=!evidenceTable.classList.contains('new-only');evidenceTable.classList.toggle('new-only',onlyNew);newToggle.setAttribute('aria-pressed',String(onlyNew));newToggle.textContent=onlyNew?'顯示全部原文摘錄':'顯示所有 New! 摘要';const status=document.querySelector('#new-evidence-status');if(status)status.textContent=onlyNew?`目前顯示 ${newRows.length} 筆 New! 摘要（C01–C04、H01–H03）`:`目前顯示全部 ${rows.length} 筆摘錄`;});}
 </script>
 </body>
 </html>
